@@ -1,35 +1,39 @@
+@use "../abstract/" as *;
+
 /*----------------*/
 /*Common Style CSS*/
 /*----------------*/
+
 /*----------------*/
 /*Theme default CSS*/
 /*----------------*/
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Rubik&family=Work+Sans&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
-  font-family: "Rubik", sans-serif;
+  font-family: $rubik;
   font-size: 15px;
   font-weight: 400;
   line-height: 25px;
 }
-
 a {
   text-decoration: none;
 }
-
-.w-img img {
-  width: 100%;
+.w-img {
+  & img {
+    width: 100%;
+  }
 }
-
-.m-img img {
-  max-width: 100%;
+.m-img {
+  & img {
+    max-width: 100%;
+  }
 }
-
 .btn:focus,
 button:focus,
 .form-control:focus,
@@ -37,47 +41,38 @@ button:focus,
   outline: none;
   box-shadow: none;
 }
-
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: "Poppins", sans-serif;
+  font-family: $poppins;
   font-weight: 600;
 }
-
 h1 {
   font-size: 48px;
 }
-
 h2 {
   font-size: 40px;
 }
-
 h3 {
   font-size: 32px;
 }
-
 h4 {
   font-size: 22px;
 }
-
 h5 {
   font-size: 16px;
 }
-
 h6 {
   font-size: 14px;
 }
-
 ul,
 ol {
   margin: 0;
   padding: 0;
 }
-
 li {
   list-style: none;
 }
@@ -86,11 +81,12 @@ li {
     - Input Placeholder
 -----------------------------------------*/
 *::-moz-placeholder {
+//   color: $black;
   font-size: 14px;
   opacity: 1;
 }
-
 *::placeholder {
+//   color: $black;
   font-size: 14px;
   opacity: 1;
 }
@@ -101,15 +97,11 @@ li {
 .fix {
   overflow: hidden;
 }
-
-.clear::after, .clear::before {
-  content: "";
-  display: table;
-  clear: both;
+.clear {
+  &::after,
+  &::before {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
-
-/*----------------*/
-/*Header Style CSS*/
-/*----------------*/
-
-/*# sourceMappingURL=style.css.map */
